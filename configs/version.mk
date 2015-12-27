@@ -12,21 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/custom/configs/aosp_fixes.mk
-include vendor/custom/configs/bootanimation.mk
-include vendor/custom/configs/custom_main.mk
-include vendor/custom/configs/system_additions.mk
-include vendor/custom/configs/version.mk
+#PureNexus versioning
+ifndef ROM_BUILD_TYPE
+    ROM_BUILD_TYPE := HOMEMADE
+endif
 
-# Telephony packages
-PRODUCT_PACKAGES += \
-    Stk \
-    CellBroadcastReceiver
+ROM_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-$(ROM_BUILD_TYPE)
+ROM_NAME := pure_nexus
 
-# Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
+    ro.rom.version=$(ROM_VERSION)
 
-# Thank you, please drive thru!
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dun.override=0
