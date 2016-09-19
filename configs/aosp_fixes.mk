@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
 
 # Proprietary latinime libs needed for Keyboard swyping
-ifneq ($(filter shamu tuna,$(TARGET_PRODUCT)),)
+ifneq ($(filter shamu tuna manta,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/custom/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 else
@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Camera Effects for devices without a vendor partition
-ifneq ($(filter shamu tuna,$(TARGET_PRODUCT)),)
+ifneq ($(filter shamu tuna manta,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES +=  \
     vendor/custom/prebuilt/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     vendor/custom/prebuilt/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
