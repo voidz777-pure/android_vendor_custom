@@ -27,7 +27,7 @@ ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
 endif
 ifneq ($(filter tuna,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
-        vendor/custom/prebuilt/bootanimation/shamu.zip:system/media/bootanimation.zip
+        vendor/custom/prebuilt/bootanimation/tuna.zip:system/media/bootanimation.zip
 endif
 ifneq ($(filter manta,$(TARGET_PRODUCT)),)
     PRODUCT_COPY_FILES += \
